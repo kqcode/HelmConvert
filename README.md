@@ -1,2 +1,2 @@
 # HelmConvert
-HelmConvert is userd to convert Helm charts for different cloud providers.
+HelmConvert is used to convert Helm charts for different cloud providers.
