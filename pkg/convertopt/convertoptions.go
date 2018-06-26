@@ -5,4 +5,6 @@ type ConvertOptions struct {
 	InputFiles []string
 	//cloud provider
 	Provider string
+	//the .tgz file to convert
+	TgzFile []string
 }

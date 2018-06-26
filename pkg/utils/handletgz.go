@@ -34,7 +34,6 @@ func compress(file *os.File, prefix string, tarwriter *tar.Writer) error {
 	if err != nil {
 		log.Fatalf("%s not found: %v", file, err)
 	}
-	fmt.Println(info, info.Name(), info.IsDir())
 	if info.IsDir() {
 		prefix = prefix + "/" + info.Name()
 		fileInfos, err := file.Readdir(-1)
@@ -58,8 +57,6 @@ func compress(file *os.File, prefix string, tarwriter *tar.Writer) error {
 			log.Fatalf("tar.FileInfoHeader failed: %v", err)
 		}
 		header.Name = prefix + "/" + header.Name
-		fmt.Println(header)
-		fmt.Println(header.Name)
 		err = tarwriter.WriteHeader(header)
 		if err != nil {
 			log.Fatalf("tarwriter.WriteHeader failed: %v", err)
